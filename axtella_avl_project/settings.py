@@ -206,6 +206,7 @@ SIMPLE_JWT = {
     'SIGNING_KEY': 'x4o1d$2@_-rl6ibl!_u4_8b=px6mhxzk$0$lenpce41*^_^=p0',  
     'AUTH_HEADER_TYPES': ('Bearer',),
 }
+
 from rest_framework_simplejwt.settings import api_settings
 
 api_settings.USER_ID_FIELD = 'user_id'
