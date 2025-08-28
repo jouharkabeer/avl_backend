@@ -21,11 +21,14 @@ class Device_datatable(BaseModel):
     
 class DeviceSensorDataRecord(models.Model):
     id = models.AutoField(primary_key=True)
+    guid_id = models.UUIDField(default=uuid.uuid4, editable=False)
     imei_no = models.CharField(max_length=20, null=True, blank=True)
     data_type_code = models.IntegerField(null=True, blank=True)
     value = models.IntegerField(null=True, blank=True)
     timestring = models.CharField(max_length=100, null=True, blank=True)
-
+    element_count = models.IntegerField(null=True, blank=True)
+    batch = models.IntegerField(null=True, blank=True)
+    processed = models.BooleanField(default=False)
     def __str__(self):
         return f"{self.record_id} - {self.value}"
 
