@@ -106,7 +106,7 @@ class AccountDevice(BaseModel):
     imei_no = models.CharField(max_length=50, null=True, blank=True)
     features = models.ManyToManyField(DeviceFeature, related_name='devices_features')
     configuration_api = models.CharField(max_length=50, null=True, blank=True)
-    subscription = models.ForeignKey('Subscription', on_delete=models.CASCADE, related_name='Account_subscription')
+    subscription = models.ForeignKey('Subscription', on_delete=models.CASCADE, null=True, related_name='Account_subscription')
     def __str__(self):
         return f"{self.account.name} - {self.device.device_name}"
     

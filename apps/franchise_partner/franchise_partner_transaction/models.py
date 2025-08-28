@@ -34,9 +34,9 @@ class ReportTable(BaseModel):
     id = models.AutoField(primary_key=True)
     driver = models.CharField(max_length=50, null=True, blank=True)
     license_plate = models.CharField(max_length=255, null=True, blank=True)
-    vehicle_id = models.CharField(null=True, blank=True)
+    vehicle_id = models.CharField(max_length=50, null=True, blank=True)
     sensor_values = models.JSONField(null=True, blank=True) 
-    device_id = models.CharField(null=True, blank=True)
+    device_id = models.CharField(max_length=50,null=True, blank=True)
     imei_no = models.CharField(max_length=50, null=True, blank=True)
     batch = models.IntegerField(null=True, blank=True)
 
